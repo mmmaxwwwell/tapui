@@ -1,0 +1,54 @@
+:root {
+  --bg: #f6f6f4;
+  --card: #ffffff;
+  --fg: #1d1d1b;
+  --muted: #6b6b66;
+  --line: #deded8;
+  --accent: #2563eb;
+  --accent-fg: #ffffff;
+  --ok: #15803d;
+  --error: #b91c1c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161615;
+    --card: #20201e;
+    --fg: #ececea;
+    --muted: #9b9b95;
+    --line: #353532;
+    --accent: #60a5fa;
+    --accent-fg: #0b1220;
+    --ok: #4ade80;
+    --error: #f87171;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.4 system-ui, sans-serif;
+}
+main { max-width: 32rem; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+h1 { font-size: 1.4rem; margin: 0 0 .25rem; }
+#status { color: var(--muted); margin: 0 0 1rem; min-height: 1.4em; }
+#status[data-kind="ok"] { color: var(--ok); }
+#status[data-kind="error"] { color: var(--error); }
+button { font: inherit; border-radius: .6rem; border: 1px solid var(--line); background: var(--card); color: var(--fg); padding: .8rem 1rem; }
+button.primary { width: 100%; background: var(--accent); color: var(--accent-fg); border: none; font-weight: 600; }
+button:disabled { opacity: .5; }
+#controls { display: grid; gap: .6rem; }
+.control {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  background: var(--card); border: 1px solid var(--line); border-radius: .6rem;
+  padding: .8rem 1rem; min-height: 3.2rem;
+}
+button.control { justify-content: center; font-weight: 600; }
+.control-slider { flex-wrap: wrap; }
+.slider { display: flex; align-items: center; gap: .6rem; flex: 1 1 12rem; }
+.slider input { flex: 1; accent-color: var(--accent); }
+.slider output { min-width: 3.5rem; text-align: right; font-variant-numeric: tabular-nums; }
+input[type="checkbox"] { width: 1.6rem; height: 1.6rem; accent-color: var(--accent); }
+select { font: inherit; padding: .4rem; border-radius: .4rem; background: var(--bg); color: var(--fg); border: 1px solid var(--line); }
+.control-readout output { font-variant-numeric: tabular-nums; font-weight: 600; }
+.unsupported { color: var(--muted); font-style: italic; }

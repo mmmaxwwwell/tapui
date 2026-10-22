@@ -1,0 +1,11 @@
+{
+  "name": "TapUI",
+  "short_name": "TapUI",
+  "description": "Controls for the device you tapped or scanned, over Bluetooth.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#161615",
+  "theme_color": "#2563eb",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

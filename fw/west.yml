@@ -1,0 +1,23 @@
+# TapUI firmware west manifest: upstream Zephyr (no NCS), only the modules
+# an nRF52840 build needs. Same Zephyr tag as fieldpad/fw.
+manifest:
+  version: "1.2"
+
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+
+  projects:
+    - name: zephyr
+      remote: zephyrproject-rtos
+      revision: v4.5.0-rc2
+      import:
+        name-allowlist:
+          - cmsis
+          - cmsis_6
+          - hal_nordic
+          - picolibc
+          - segger
+
+  self:
+    path: fw

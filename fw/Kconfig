@@ -1,0 +1,23 @@
+mainmenu "TapUI"
+
+config TAPUI_URL_BASE
+	string "Page the NFC tag and QR code open"
+	default "https://mmmaxwwwell.github.io/tapui/"
+	help
+	  The device appends ?n=<its advertised name>.
+
+config TAPUI_NFC
+	bool "Serve the page's link from the NFC tag"
+	default y
+	depends on $(dt_nodelabel_exists,nfct)
+	select NRFX_NFCT
+
+config TAPUI_TX_LINE_MAX
+	int "Longest line the device sends, UI description included"
+	default 1024
+
+config TAPUI_THREAD_STACK_SIZE
+	int "Stack of the thread that runs command handlers"
+	default 2048
+
+source "Kconfig.zephyr"
